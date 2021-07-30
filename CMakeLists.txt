@@ -34,6 +34,10 @@ endif()
 #   add_compile_options(/Za)
 # endif()
 
+# Avoid licensing issues - eigen optionally uses LGPL code, which we want to avoid
+# See ext/eigen/COPYING.README for details
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEIGEN_MPL2_ONLY")
+
 add_library(DEC_LIBS
     OBJECT
     quadric_error_metric.cpp
