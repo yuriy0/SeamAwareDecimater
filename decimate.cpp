@@ -286,6 +286,11 @@ bool decimate_halfedge_5d(
 			break;
 		}
 		remain_vertices--;
+
+        if (remain_vertices % 100 == 0)
+        {
+            cout << remain_vertices << " vertices remain to collapse..." << endl;
+        }
 	}
 
 	// remove all DUV_COLLAPSE_EDGE_NULL faces
